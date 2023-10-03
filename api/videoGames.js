@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const REPLACE_ME = 'HELP REPLACE ME!!!!';
+
 
 const { getAllVideoGames,
     getVideoGameById,
@@ -20,9 +20,10 @@ router.get('/', async (req, res, next) => {
 });
 
 // GET - /api/video-games/:id - get a single video game by id
+// pass the id from the url as an argument to getVideoGameById using req.params 
 router.get('/:id', async (req, res, next) => {
     try {
-        const videoGame = await getVideoGameById(REPLACE_ME);
+        const videoGame = await getVideoGameById(req.params.id);
         res.send(videoGame);
     } catch (error) {
         next(error);

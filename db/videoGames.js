@@ -1,9 +1,10 @@
 const client = require('./client');
 const util = require('util');
 
-const REPLACE_ME = 'HELP REPLACE ME!!!!';
+const REPLACE_ME = 'SELECT * FROM videoGames;';
 
 // GET - /api/video-games - get all video games
+// * Replace REPLACE_ME const with correct query - SELECT * FROM videoGames 
 async function getAllVideoGames() {
     try {
         const { rows: videoGames } = await client.query(REPLACE_ME);
